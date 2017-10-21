@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: 'Source Serif Pro','Times New Roman', Georgia, serif;
+  margin: 4em;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Fjalla One', Impact, Arial, sans-serif;
+}
+#container, #chart {
+  width: 60%;
+  height: 500px;
+}
+
+
+a {
+  color: #0287b3;
+}
+
+a:hover {
+  color: #3ecbfa;
+}
+
+@media (max-width: 800px) {
+  .highcharts-container {
+    width: 100%;
+    margin: 0;
+    }
+  }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Literacy Rates in the Americas</title>
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Serif+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="styles/second.css">
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/themes/dark-blue.js"></script>
+
+</head>
+<body>
+
+  <h1>Literacy Rates in Latin America</h1>
+  <p><b>By: Michelle Tapia </b></p>
+
+  <p>Although access to education in Latin America has increased over the years, there is still a concern that children are not learning. Many schools remain to be disorganized with poorly trained teachers on their staff. There is often no standardized evaluation process to ensure teachers are held accountable. This leads to 20 percent of students being functionally illiterate by the time they reach the 6th grade. According to the <a href="https://blog.usaid.gov/2012/09/ask-the-expert-literacy-in-latin-america/" target="_blank">U.S. Agency for International Development</a>, if children remain illiterate, then this will later affect their abilitiy to learn other subjects and limits their place in society down the line.</p>
+
+  <div id="container"></div>
+
+  <p><b>Source</b>: United Nations, <a href="http://data.un.org/Data.aspx?d=GenderStat&f=inID%3a49" target="_blank">Gender Info UNSD. Adult literacy rates.</a></p>
+
+<p>The more countries and their education systems develop, the more literacy rates increase as seen by Mexico. Although there is still a gender disparity (both in Mexico and the global rates), the gap is closing more and more each year.</p>
+
+  <div id="chart"></div>
+<p><b>Source</b>: United Nations, <a href="http://data.un.org/Data.aspx?d=GenderStat&f=inID%3a49" target="_blank">Gender Info UNSD. Adult literacy rates.</a></p>
+
+  <script>
+  Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Literacy Rate in Latin America in 2004'
+    },
+    subtitle: {
+        text: 'Source: <a href="http://data.un.org/Data.aspx?d=GenderStat&f=inID%3a50">United Nations, Gender Info</a>'
+    },
+    xAxis: {
+        categories: ['Mexico', 'El Salvador', 'Puerto Rico', 'Brazil'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Literacy rate (percentage)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' percentage'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -10,
+        y: 0,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Female',
+        data: [97.6, 90.3, 86.3, 97.9]
+    }, {
+        name: 'Male',
+        data: [97.5, 86.6, 86.5, 95.8]
+    }]
+});
+
+Highcharts.chart('chart', {
+
+    title: {
+        text: 'Literacy Rate in Mexico 2000-2003'
+    },
+
+    subtitle: {
+        text: 'Source: United Nations'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Literacy Rate (percentage)'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 2000
+        }
+    },
+
+    series: [{
+        name: 'Female',
+        data: [88.7, 88.7, 89.6, 90.2]
+    }, {
+        name: 'Male',
+        data: [92.6, 92.0, 92.4, 93.2]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+  </script>
+
+
+</body>
+</html>
